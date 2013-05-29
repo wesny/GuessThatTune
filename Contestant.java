@@ -4,9 +4,9 @@ public class Contestant{
     private Score _myScore;
 
     public Contestant(){
-  _name = "bob";
+        _name = "bob";
 	_myScore = 0;
-}
+    }
 
     public Contestant(String name){
 	_name = name;
@@ -19,7 +19,7 @@ public class Contestant{
 
     public Score addScore(){ return _myScore.add();}
 
-    public Score subtractScore(){return _myScore.subtract;}
+    public Score subtractScore(){return _myScore.subtract();}
     
     public String getName(){ return _name;}
 
