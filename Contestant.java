@@ -5,12 +5,12 @@ public class Contestant{
 
     public Contestant(){
         _name = "bob";
-	_myScore = 0;
+	_myScore = new Score();
     }
 
     public Contestant(String name){
 	_name = name;
-	_myScore = 0;
+	_myScore = new Score();
     }
     
     public Score getScore(){
