@@ -1,7 +1,7 @@
 //tentative scoring class, needs to be attached to stuff
 public class Score{
 
-  private Integer _score;
+  private int _score;
   
   public Score(){
   _score = 0;  
