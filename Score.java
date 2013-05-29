@@ -7,15 +7,15 @@ public class Score{
   _score = 0;  
   }
   
-  public getScore(){
+  public int getScore(){
    return _score;
   }
   
-  public add(){
+  public void add(){
     _score++;
   }
  
-  public subtract(){
+  public void subtract(){
    _score--; 
   }
   
