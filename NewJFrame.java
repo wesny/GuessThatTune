@@ -7,6 +7,7 @@
  *
  * @author WaqarulIslam
  */
+
 public class NewJFrame extends javax.swing.JFrame {
 
     /**
@@ -51,7 +52,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel3.setText("Player Name");
 
-        jTextField1.setText("String Name");
+        jTextField1.setText("Name");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -118,11 +119,13 @@ public class NewJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        //Test output
+        System.out.println(jSpinner1.getValue() + " " + jTextField1.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
+        //Test output
+        System.out.println("test jTextField1");
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
