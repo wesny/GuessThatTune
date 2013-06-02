@@ -25,9 +25,11 @@ public class SetupScreen extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+    //  put limits on the spinner -arina
+        javax.swing.SpinnerModel x = new javax.swing.SpinnerNumberModel(1, 1, 20, 1);
+        
         jButton1 = new javax.swing.JButton();
-        jSpinner1 = new javax.swing.JSpinner();
+        jSpinner1 = new javax.swing.JSpinner(x);
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
