@@ -8,4 +8,6 @@ public class Play{
 	public void play(){
 		new SetupScreen().run();
 	}
+
+	public void changeScreen()
 }
