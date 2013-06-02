@@ -4,8 +4,16 @@ import javax.swing.ButtonGroup;
 
 
 public class GameFrame extends javax.swing.JFrame{
+	
+	private SongList songs;
+	private Contestant player;
+	private Play game;
 
   public GameFrame(){
+		//put path as whatever we decide on
+		songs = new SongList(...);
+		player = new Contestant();
+		game = new game();
 		initComponents();
 	}
 	
