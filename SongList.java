@@ -57,6 +57,6 @@ public class SongList{
 		ArrayList<String> songs = test.get4RandomSongs();
 		System.out.println(songs);
 		System.out.println(test.getSongPath(songs.get(0)));
-		player.play();
+		player.play(380);
 	}
 }

@@ -5,7 +5,7 @@ public class Contestant{
     private int _numRounds;
 
     public Contestant(){
-        _name = "bob";
+    _name = "Bob";
 	_myScore = new Score();
 	_numRounds = 0;
     }
@@ -16,15 +16,15 @@ public class Contestant{
     }
     
     public Score getScore(){
-	return _myScore;
+	   return _myScore;
     }
 
-    public Score addScore(){ 
-    	return _myScore.add();
+    public void addScore(){ 
+    	_myScore.add();
     }
 
-    public Score subtractScore(){
-    	return _myScore.subtract();
+    public void subtractScore(){
+    	_myScore.subtract();
     }
     
     public String getName(){ 
@@ -33,6 +33,10 @@ public class Contestant{
 
     public int getNumRounds(){
 	return _numRounds;		
+    }
+
+    public void setNumRounds(int num){
+        _numRounds = num;
     }	
 
 
