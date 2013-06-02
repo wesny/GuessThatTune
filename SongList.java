@@ -43,11 +43,12 @@ public class SongList{
 		for (int i = 0; i < 4; i++){
 			Random makeRand = new Random();
 			int random = makeRand.nextInt(listOfSongs.size());
-			while (ans.contains(listOfSongs.get(random)))
+			while (ans.contains(listOfSongs.get(random).getName()))
 				random = makeRand.nextInt(listOfSongs.size());
-			String song = listOfSongs.get(random).getName();
-			ans.add(song.substring(0, song.length() - 4));
+			ans.add(listOfSongs.get(random).getName());
 		}
+		for (int i = 0; i < 4; i++)
+			ans.set(i,ans.get(i).substring(0, ans.get(i).length() - 4));
 		return ans;
 	}	
 

@@ -15,8 +15,8 @@ public class Contestant{
 	_name = name;
     }
     
-    public Score getScore(){
-	   return _myScore;
+    public int getScore(){
+	   return _myScore.getScore();
     }
 
     public void addScore(){ 
@@ -38,7 +38,6 @@ public class Contestant{
     public void setNumRounds(int num){
         _numRounds = num;
     }	
-
 
     public String changeName(String newName){
 	String temp = _name;
