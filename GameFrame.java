@@ -46,15 +46,40 @@ private void initComponents(){
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             choice1ActionPerformed(evt);
         }
+        
+        choice2.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            choice1ActionPerformed(evt);
+        }
+	choice3.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            choice1ActionPerformed(evt);
+        }
+        
+	choice4.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            choice1ActionPerformed(evt);
+        }
     });	
 
 
 	
 }
 
-private void choice1ActionPerformed(java.awt.event.ActionEvent evt) {
-    //Test output
-    //what to put here?
+private int choice1ActionPerformed(java.awt.event.ActionEvent evt) {
+    return 0;
+}
+
+private int choice1ActionPerformed(java.awt.event.ActionEvent evt) {
+    return 1;
+}
+
+private int choice1ActionPerformed(java.awt.event.ActionEvent evt) {
+    return 2;
+}
+
+private int choice1ActionPerformed(java.awt.event.ActionEvent evt) {
+    return 3;
 }
 
 public void run(){
