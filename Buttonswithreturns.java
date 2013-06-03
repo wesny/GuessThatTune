@@ -7,7 +7,7 @@
  *
  * @author WaqarulIslam
  */
-public class NewJFrame extends javax.swing.JFrame {
+public class Buttonswithreturns extends javax.swing.JFrame {
 int guess;
     /**
      * Creates new form NewJFrame
