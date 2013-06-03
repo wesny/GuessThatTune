@@ -73,7 +73,8 @@ public void run(){
 		System.out.println();
 		System.out.print("Please enter the corresponding number to your guess:");
 		musicPlayer.close();
-		int guess = readInt();
+//		Button should be pressed and return an int to the computer which will be int guess.
+//		int guess =;
 		if (guess == song){
 			System.out.println("Correct!");
 			player.addScore();
