@@ -43,43 +43,22 @@ private void initComponents(){
 	choice4.setText("song4");
 	
 	choice1.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            choice1ActionPerformed(evt);
+	return 0;
         }
         
         choice2.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            choice2ActionPerformed(evt);
+       return 1;
         }
 	choice3.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            choice3ActionPerformed(evt);
+   	return 2;
         }
         
 	choice4.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            choice4ActionPerformed(evt);
+        return 3;
         }
     });	
 
 
-	
-}
-
-private int choice1ActionPerformed(java.awt.event.ActionEvent evt) {
-    return 0;
-}
-
-private int choice1ActionPerformed(java.awt.event.ActionEvent evt) {
-    return 1;
-}
-
-private int choice1ActionPerformed(java.awt.event.ActionEvent evt) {
-    return 2;
-}
-
-private int choice1ActionPerformed(java.awt.event.ActionEvent evt) {
-    return 3;
 }
 
 public void run(){
