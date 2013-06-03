@@ -9,9 +9,14 @@ public class GameFrame extends javax.swing.JFrame{
 	private SongList songs;
 	private Contestant player;
 	private SetupScreen setup;
+	private javax.swing.JRadioButton choice1;
+	private javax.swing.JRadioButton choice2;
+	private javax.swing.JRadioButton choice3;
+	private javax.swing.JRadioButton choice4;
 
   public GameFrame(){
   		setup = new SetupScreen();
+  		setup.run();
 		//put path as whatever we decide on	
 		songs = new SongList(readString());
 		player = new Contestant();
@@ -57,10 +62,6 @@ public void actionPerformed(ActionEvent e)
 	e.getActionCommand();
 	
 }
-	private javax.swing.JRadioButton choice1;
-	private javax.swing.JRadioButton choice2;
-	private javax.swing.JRadioButton choice3;
-	private javax.swing.JRadioButton choice4;
 	
 	
 }
