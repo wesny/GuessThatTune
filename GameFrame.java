@@ -2,17 +2,23 @@ import java.awt.event.ActionEvent;
 import static cs1.Keyboard.*;
 import javax.swing.ButtonGroup;
 import java.util.*;
-
+import javax.swing.AbstractButton;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JFrame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 public class GameFrame extends javax.swing.JFrame{
 	
 	private SongList songs;
 	private Contestant player;
 	private SetupScreen setup;
-	private javax.swing.JRadioButton choice1;
-	private javax.swing.JRadioButton choice2;
-	private javax.swing.JRadioButton choice3;
-	private javax.swing.JRadioButton choice4;
+	private javax.swing.JButton choice1;
+	private javax.swing.JButton choice2;
+	private javax.swing.JButton choice3;
+	private javax.swing.JButton choice4;
 
   public GameFrame(){
   		setup = new SetupScreen();
@@ -26,35 +32,29 @@ public class GameFrame extends javax.swing.JFrame{
 private void initComponents(){
 	
 	
-	choice1 = new javax.swing.JRadioButton();
-	choice2 = new javax.swing.JRadioButton();
-	choice3 = new javax.swing.JRadioButton();
-	choice4 = new javax.swing.JRadioButton();
+	choice1 = new javax.swing.JButton();
+	choice2 = new javax.swing.JButton();
+	choice3 = new javax.swing.JButton();
+	choice4 = new javax.swing.JButton();
 	
 	choice1.setText("song1");
 	choice2.setText("song2");
 	choice3.setText("song3");
 	choice4.setText("song4");
 	
-	choice1.setActionCommand("song1");
-	choice2.setActionCommand("song2");
-	choice3.setActionCommand("song3");
-	choice4.setActionCommand("song4");
-
-	
-	ButtonGroup group = new ButtonGroup();
-	
-	group.add(choice1);
-	group.add(choice2);
-	group.add(choice3);
-	group.add(choice4);
-
 	choice1.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            choice1.ActionPerformed(evt);
-        }});
+            choice1ActionPerformed(evt);
+        }
+    });	
+
+
 	
-	
+}
+
+private void choice1ActionPerformed(java.awt.event.ActionEvent evt) {
+    //Test output
+    //what to put here?
 }
 
 public void run(){
@@ -73,8 +73,7 @@ public void run(){
 		System.out.println();
 		System.out.print("Please enter the corresponding number to your guess:");
 		musicPlayer.close();
-//		Button should be pressed and return an int to the computer which will be int guess.
-//		int guess =;
+		int guess = readInt();
 		if (guess == song){
 			System.out.println("Correct!");
 			player.addScore();
@@ -93,12 +92,11 @@ public void actionPerformed(ActionEvent e)
 }
 	
 	
-}
+
 
 public static void main(String[] args){
 
 GameFrame a = new GameFrame();
-
 a.run();
 }
 }
