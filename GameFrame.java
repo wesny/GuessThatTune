@@ -82,7 +82,8 @@ public void run(){
 			System.out.println("I'm sorry, the correct answer was " + songList.get(song));
 		System.out.println("-------------------");
 	}	  
-}	  
+	System.out.println("Congratulations, you've completed " + player.getNumRounds() + " rounds and got " + Math.round(player.getScore() * 1.0 / player.getNumRounds() * 100) + " percent correct!");
+}
 	  
 public void actionPerformed(ActionEvent e) 
 {
