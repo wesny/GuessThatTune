@@ -58,29 +58,29 @@ private void initComponents(){
 }
 
 public void run(){
-		for (int i = 0; i < player.getNumRounds(); i++){
-			System.out.println("Ready for the song?");
-			ArrayList<String> songList= songs.get4RandomSongs();
-			int song = (int)(Math.random() * 4);
-			AdvancedMP3 musicPlayer = new AdvancedMP3(songs.getSongPath(songList.get(song)));
-			musicPlayer.play();
-			for (int j = 0; j < 4; j++){
-				System.out.println(j + ": " + songList.get(j));
-			}
-			System.out.print("You'll be able to make your guess after the song finishes");
-			waiting(10);
-			musicPlayer.forceClose();
-			System.out.println();
-			System.out.print("Please enter the corresponding number to your guess:");
-			int guess = readInt();
-			if (guess == song){
-				System.out.println("Correct!");
-				player.addScore();
-			}
-			else
-				System.out.println("I'm sorry, the correct answer was " + songList.get(song));
-			System.out.println("-------------------");
-		}	  
+	for (int i = 0; i < player.getNumRounds(); i++){
+		System.out.println("Ready for the song?");
+		ArrayList<String> songList= songs.get4RandomSongs();
+		int song = (int)(Math.random() * 4);
+		AdvancedMP3 musicPlayer = new AdvancedMP3(songs.getSongPath(songList.get(song)));	
+		musicPlayer.play();
+		for (int j = 0; j < 4; j++){
+			System.out.println(j + ": " + songList.get(j));
+		}
+		System.out.print("You'll be able to make your guess after the song finishes");
+		waiting(10);
+		musicPlayer.forceClose();
+		System.out.println();
+		System.out.print("Please enter the corresponding number to your guess:");
+		int guess = readInt();
+		if (guess == song){
+			System.out.println("Correct!");
+			player.addScore();
+		}
+		else
+			System.out.println("I'm sorry, the correct answer was " + songList.get(song));
+		System.out.println("-------------------");
+	}	  
 }	  
 	  
 public void actionPerformed(ActionEvent e) 
@@ -94,6 +94,6 @@ public void actionPerformed(ActionEvent e)
 
 public static void main(String[] args){
 
-GameFrame = new GameFrame();
+GameFrame a = new GameFrame();
 }
 }
