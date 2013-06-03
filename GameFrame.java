@@ -8,11 +8,11 @@ public class GameFrame extends javax.swing.JFrame{
 	
 	private SongList songs;
 	private Contestant player;
-	private SetupScreen
+	private SetupScreen setup;
 
   public GameFrame(){
-		//put path as whatever we decide on
-		
+  		setup = new SetupScreen();
+		//put path as whatever we decide on	
 		songs = new SongList(readString());
 		player = new Contestant();
 		initComponents();
@@ -63,4 +63,10 @@ public void actionPerformed(ActionEvent e)
 	private javax.swing.JRadioButton choice4;
 	
 	
+}
+
+public static void main(String[] args){
+
+GameFrame = new GameFrame();
+}
 }
