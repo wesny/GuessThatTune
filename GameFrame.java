@@ -97,5 +97,7 @@ public void actionPerformed(ActionEvent e)
 public static void main(String[] args){
 
 GameFrame a = new GameFrame();
+
+a.run();
 }
 }
