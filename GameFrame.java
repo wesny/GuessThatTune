@@ -1,19 +1,20 @@
 import java.awt.event.ActionEvent;
-
+import static cs1.Keyboard.*;
 import javax.swing.ButtonGroup;
+import java.util.*;
 
 
 public class GameFrame extends javax.swing.JFrame{
 	
 	private SongList songs;
 	private Contestant player;
-	private Play game;
+	private SetupScreen
 
   public GameFrame(){
 		//put path as whatever we decide on
-		songs = new SongList(...);
+		
+		songs = new SongList(readString());
 		player = new Contestant();
-		game = new game();
 		initComponents();
 	}
 	
