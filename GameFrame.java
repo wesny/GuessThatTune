@@ -19,7 +19,7 @@ public class GameFrame extends javax.swing.JFrame{
   		setup.run();
 		//put path as whatever we decide on	
 		songs = new SongList(readString());
-		player = new Contestant();
+		player = new Contestant(setupscreen.getContestantName());
 		initComponents();
 	}
 	
