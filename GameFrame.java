@@ -64,9 +64,12 @@ public void run(){
 		int song = (int)(Math.random() * 4);
 		AdvancedMP3 musicPlayer = new AdvancedMP3(songs.getSongPath(songList.get(song)));	
 		musicPlayer.play(380);
-		for (int j = 0; j < 4; j++){
-			System.out.println(j + ": " + songList.get(j));
-		}
+		
+		choice1.setText("" + songList.get(0));
+		choice2.setText("" + songList.get(1));
+		choice3.setText("" + songList.get(2));
+		choice4.setText("" + songList.get(3));
+		
 		System.out.println();
 		System.out.print("Please enter the corresponding number to your guess:");
 		musicPlayer.forceClose();
