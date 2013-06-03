@@ -49,16 +49,16 @@ private void initComponents(){
         
         choice2.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            choice1ActionPerformed(evt);
+            choice2ActionPerformed(evt);
         }
 	choice3.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            choice1ActionPerformed(evt);
+            choice3ActionPerformed(evt);
         }
         
 	choice4.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            choice1ActionPerformed(evt);
+            choice4ActionPerformed(evt);
         }
     });	
 
