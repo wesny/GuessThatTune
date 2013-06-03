@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 public class GameFrame extends javax.swing.JFrame{
-	
+
 	private SongList songs;
 	private Contestant player;
 	private SetupScreen setup;
@@ -28,37 +28,58 @@ public class GameFrame extends javax.swing.JFrame{
 		player = new Contestant(setupscreen.getContestantName());
 		initComponents();
 	}
-	
+
 private void initComponents(){
-	
-	
+
+
 	choice1 = new javax.swing.JButton();
 	choice2 = new javax.swing.JButton();
 	choice3 = new javax.swing.JButton();
 	choice4 = new javax.swing.JButton();
-	
+
 	choice1.setText("song1");
 	choice2.setText("song2");
 	choice3.setText("song3");
 	choice4.setText("song4");
-	
+
 	choice1.addActionListener(new java.awt.event.ActionListener() {
-	return 0;
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            choice1ActionPerformed(evt);
         }
         
         choice2.addActionListener(new java.awt.event.ActionListener() {
-       return 1;
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            choice2ActionPerformed(evt);
         }
 	choice3.addActionListener(new java.awt.event.ActionListener() {
-   	return 2;
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            choice3ActionPerformed(evt);
         }
         
 	choice4.addActionListener(new java.awt.event.ActionListener() {
-        return 3;
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            choice4ActionPerformed(evt);
         }
     });	
 
 
+
+}
+
+private int choice1ActionPerformed(java.awt.event.ActionEvent evt) {
+    return 0;
+}
+
+private int choice1ActionPerformed(java.awt.event.ActionEvent evt) {
+    return 1;
+}
+
+private int choice1ActionPerformed(java.awt.event.ActionEvent evt) {
+    return 2;
+}
+
+private int choice1ActionPerformed(java.awt.event.ActionEvent evt) {
+    return 3;
 }
 
 public void run(){
@@ -68,12 +89,12 @@ public void run(){
 		int song = (int)(Math.random() * 4);
 		AdvancedMP3 musicPlayer = new AdvancedMP3(songs.getSongPath(songList.get(song)));	
 		musicPlayer.play(380);
-		
+
 		choice1.setText("" + songList.get(0));
 		choice2.setText("" + songList.get(1));
 		choice3.setText("" + songList.get(2));
 		choice4.setText("" + songList.get(3));
-		
+
 		System.out.println();
 		System.out.print("Please enter the corresponding number to your guess:");
 		musicPlayer.close();
@@ -88,14 +109,14 @@ public void run(){
 	}	  
 	System.out.println("Congratulations, you've completed " + player.getNumRounds() + " rounds and got " + Math.round(player.getScore() * 1.0 / player.getNumRounds() * 100) + " percent correct!");
 }
-	  
+
 public void actionPerformed(ActionEvent e) 
 {
 	e.getActionCommand();
-	
+
 }
-	
-	
+
+
 
 
 public static void main(String[] args){
