@@ -12,7 +12,7 @@ public class SongList{
 		listOfSongs = new ArrayList<File>();
 		for (File child : dir.listFiles()) {
 			int len = child.getName().length();
-			if (!child.isHidden() && child.getName().substring(len-4, len).equals(".mp3"))
+			if (!child.isHidden() && child.getName().length() > 4 && child.getName().substring(len-4, len).equals(".mp3"))
 				listOfSongs.add(child);
 		}
 	}

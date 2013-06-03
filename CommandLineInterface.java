@@ -25,8 +25,12 @@ public class CommandLineInterface{
 		player.changeName(readString());
 		System.out.print("How many rounds would you like to play?:");
 		player.setNumRounds(readInt());
-		System.out.print("Where should we get the songs from?:");
-		songs = new SongList(readString());
+		System.out.print("Where are your songs? For this directory, type \"here\" or type a custom path:");
+		String path = readString();
+		if (path.equals("here") || path.equals("Here"))
+			songs = new SongList(".");
+		else
+			songs = new SongList(path);
 		System.out.println("Perfect! Let's get started! You'll hear 10 seconds of a song and you can then guess which song it was.");
 		for (int i = 0; i < player.getNumRounds(); i++){
 			System.out.println("Ready for the song?");
