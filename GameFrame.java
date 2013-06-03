@@ -72,7 +72,7 @@ public void run(){
 		
 		System.out.println();
 		System.out.print("Please enter the corresponding number to your guess:");
-		musicPlayer.forceClose();
+		musicPlayer.close();
 		int guess = readInt();
 		if (guess == song){
 			System.out.println("Correct!");
