@@ -82,7 +82,7 @@
 
 
         public void run(){
-                for (int i = 0; i < /*player.getNumRounds()*/ 3; i++){
+                for (int i = 0; i < player.getNumRounds(); i++){
                         System.out.println("Ready for the song?");
                         ArrayList<String> songList= songs.get4RandomSongs();
                         int song = (int)(Math.random() * 4);
