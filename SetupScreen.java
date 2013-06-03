@@ -173,7 +173,7 @@ public class SetupScreen extends javax.swing.JFrame {
     }
     */
     public int getNumSongs(){
-    	return (int) jSpinner1.getValue();
+    	return (Integer) jSpinner1.getValue();
     }
     
     public static void main(String args[]) {
