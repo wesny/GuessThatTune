@@ -14,7 +14,7 @@ public class SetupScreen extends javax.swing.JFrame {
     //private javax.swing.JSlider jSlider1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField jTextField1;
-	private String contestantName;
+    private String contestantName;
     private Runtime runtime;
 
     //public SetupScreen() {
@@ -24,6 +24,22 @@ public class SetupScreen extends javax.swing.JFrame {
 
     public SetupScreen(Runtime x) {
         runtime = x;
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(SetupScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(SetupScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(SetupScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(SetupScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
         initComponents();
     }
 
@@ -98,49 +114,49 @@ public class SetupScreen extends javax.swing.JFrame {
                                 .add(jLabel3)
                                 .add(57, 57, 57)
                                 .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .add(96, 96, 96))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .add(18, 18, 18)
-                .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 34, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(15, 15, 15)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel3)
-                    .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jSpinner1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 19, Short.MAX_VALUE)
+.add(96, 96, 96))))
+);
+layout.setVerticalGroup(
+    layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+    .add(layout.createSequentialGroup()
+        .add(18, 18, 18)
+        .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 34, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        .add(15, 15, 15)
+        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+            .add(jLabel3)
+            .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+            .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+            .add(jSpinner1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 19, Short.MAX_VALUE)
                 //.add(jLabel4)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 //.add(jSlider1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 //.add(jProgressBar1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(18, 18, 18)
-                .add(jButton1)
-                .add(22, 22, 22))
-        );
+        .add(18, 18, 18)
+        .add(jButton1)
+        .add(22, 22, 22))
+);
 
-        pack();
-    }
+pack();
+}
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt){
-        String name = jTextField1.getText();
-        int rounds = Integer.parseInt(jSpinner1.getValue().toString());
-        Runtime run = runtime;
-    	//this.dispose();  
-        runtime.runMainFrame(name, rounds);
-    }
+private void jButton1ActionPerformed(java.awt.event.ActionEvent evt){
+    String name = jTextField1.getText();
+    int rounds = Integer.parseInt(jSpinner1.getValue().toString());
+    Runtime run = runtime;
+    this.dispose();  
+    runtime.runMainFrame(name, rounds);
+}
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
-        System.out.println("Click 'Begin' to start game");
-    }
+private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
+    System.out.println("Click 'Begin' to start game");
+}
 
-    public void run(){
-        /* Set the Nimbus look and feel */
+public void run(){
+    /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -149,7 +165,7 @@ public class SetupScreen extends javax.swing.JFrame {
         JFrame frame = new JFrame("Guess That Tune1");
         
         JOptionPane.showMessageDialog(frame, "Sweyn Venderbush, Henrik Lempa-Cho, Waqarul Islam, Arina Bykadorova, and Richard Yip present:");
-       
+        
         JOptionPane.showMessageDialog(frame, "GUESS THAT TUNE");
 
         try {
@@ -194,7 +210,7 @@ public class SetupScreen extends javax.swing.JFrame {
     }
     
     @SuppressWarnings("unused")
-	public static void main(String args[]) {
+    public static void main(String args[]) {
 
     }
 

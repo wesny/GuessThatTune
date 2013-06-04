@@ -8,6 +8,7 @@ public class Runtime{
 	private Buttonswithreturns main;
 	private int answer;
 	private AdvancedMP3 musicPlayer;
+	private FinalFrame end;
 
 	public Runtime(){
 		songs = new SongList(".");
@@ -15,6 +16,7 @@ public class Runtime{
 		answer = 0;
 		startup = new SetupScreen(this);
 		main = new Buttonswithreturns(this);
+		end = new FinalFrame(this);
 		startup.run();
 	}
 
@@ -41,6 +43,10 @@ public class Runtime{
 		player.setNumRounds(player.getNumRounds() - 1);
 		if (player.getNumRounds() > 0)
 			newSong();
+		else{
+			main.setVisible(false);
+			end.run(player.getScore() + "");
+		}
 	}
 
 	public static void main(String[] args) {

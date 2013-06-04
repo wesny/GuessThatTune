@@ -2,8 +2,27 @@
 
 public class FinalFrame extends javax.swing.JFrame {
 
+    private Runtime runtime;
+
     /** Creates new form FinalFrame */
-    public FinalFrame() {
+    public FinalFrame(Runtime x) {
+        runtime = x;
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(FinalFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FinalFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FinalFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FinalFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
         initComponents();
     }
 
@@ -54,7 +73,7 @@ public class FinalFrame extends javax.swing.JFrame {
             .add(layout.createSequentialGroup()
                 .add(190, 190, 190)
                 .add(jButton1))
-        );
+            );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
@@ -66,14 +85,48 @@ public class FinalFrame extends javax.swing.JFrame {
                 .add(jLabel2)
                 .add(17, 17, 17)
                 .add(jButton1))
-        );
+            );
 
         pack();
     }// </editor-fold>                        
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-System.exit(0);        // TODO add your handling code here:
+        System.exit(0);        // TODO add your handling code here:
     }                                        
+
+    public void run(String x){
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(FinalFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FinalFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FinalFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FinalFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        final FinalFrame frame = this;
+        final String score = x;
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                frame.jLabel3.setText(score);
+                frame.setVisible(true);
+            }
+        });
+    }
 
     /**
      * @param args the command line arguments
@@ -105,7 +158,7 @@ System.exit(0);        // TODO add your handling code here:
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                FinalFrame frame = new FinalFrame();
+                FinalFrame frame = new FinalFrame(new Runtime());
                 //Need to put in score
                 frame.jLabel3.setText("SCORE HERE");
                 frame.setVisible(true);
