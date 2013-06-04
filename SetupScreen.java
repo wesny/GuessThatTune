@@ -17,9 +17,10 @@ public class SetupScreen extends javax.swing.JFrame {
 	private String contestantName;
     private Runtime runtime;
 
-    public SetupScreen() {
-        initComponents();
-    }
+    //public SetupScreen() {
+    //    runtime = new Runtime();
+    //    initComponents();
+    //}
 
     public SetupScreen(Runtime x) {
         runtime = x;
@@ -127,18 +128,18 @@ public class SetupScreen extends javax.swing.JFrame {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt){
-        new Thread(
-    	contestantName = jTextField1.getText();
-        runtime.runMainFrame(contestantName, Integer.parseInt(jSpinner1.getValue().toString()));
-        );
-    	this.dispose();    
+        String name = jTextField1.getText();
+        int rounds = Integer.parseInt(jSpinner1.getValue().toString());
+        Runtime run = runtime;
+    	//this.dispose();  
+        runtime.runMainFrame(name, rounds);
     }
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
         System.out.println("Click 'Begin' to start game");
     }
 
-    public static void run(){
+    public void run(){
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -167,11 +168,11 @@ public class SetupScreen extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(SetupScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-
+        final SetupScreen temp = this;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SetupScreen().setVisible(true);
+                temp.setVisible(true);
             }
         });
     }
@@ -195,7 +196,6 @@ public class SetupScreen extends javax.swing.JFrame {
     @SuppressWarnings("unused")
 	public static void main(String args[]) {
 
-        run();
     }
 
 }
