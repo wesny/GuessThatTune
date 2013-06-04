@@ -79,39 +79,6 @@
             }
 
 
-
-
-        public void run(){
-                for (int i = 0; i < player.getNumRounds(); i++){
-                        System.out.println("Ready for the song?");
-                        ArrayList<String> songList= songs.get4RandomSongs();
-                        int song = (int)(Math.random() * 4);
-                        AdvancedMP3 musicPlayer = new AdvancedMP3(songs.getSongPath(songList.get(song)));	
-                        musicPlayer.play(380);
-
-                        choice1.setText("" + songList.get(0));
-                        choice2.setText("" + songList.get(1));
-                        choice3.setText("" + songList.get(2));
-                        choice4.setText("" + songList.get(3));
-
-                        System.out.println();
-                        System.out.print("Please enter the corresponding number to your guess:");
-                        musicPlayer.close();
-                        int guess = readInt();
-                        if (guess == song){
-                                System.out.println("Correct!");
-                                player.addScore();
-                        }
-                        else
-                                System.out.println("I'm sorry, the correct answer was " + songList.get(song));
-                        System.out.println("-------------------");
-                }	  
-                System.out.println("Congratulations, you've completed " + player.getNumRounds() + " rounds and got " + Math.round(player.getScore() * 1.0 / player.getNumRounds() * 100) + " percent correct!");
-        }
-
-
-
-
         public static void main(String[] args){
         run1();
         }

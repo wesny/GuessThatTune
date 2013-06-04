@@ -33,7 +33,6 @@ public class CommandLineInterface{
 			songs = new SongList(path);
 		System.out.println("Perfect! Let's get started! You'll hear 10 seconds of a song and you can then guess which song it was.");
 		for (int i = 0; i < player.getNumRounds(); i++){
-			System.out.println("Ready for the song?");
 			ArrayList<String> songList= songs.get4RandomSongs();
 			int song = (int)(Math.random() * 4);
 			AdvancedMP3 musicPlayer = new AdvancedMP3(songs.getSongPath(songList.get(song)));

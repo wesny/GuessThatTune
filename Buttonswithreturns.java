@@ -7,13 +7,28 @@
  *
  * @author WaqarulIslam
  */
+import java.util.*;
 public class Buttonswithreturns extends javax.swing.JFrame {
-int guess;
+
+    private int guess;
+    private Runtime runtime;
     /**
      * Creates new form Buttonswithreturns
      */
     public Buttonswithreturns() {
         initComponents();
+    }
+
+    public Buttonswithreturns(Runtime x) {
+        runtime = x;
+        initComponents();
+    }
+
+    public void setButtons(ArrayList<String> songs){
+        jButton1.setText(songs.get(0));
+        jButton2.setText(songs.get(1));
+        jButton3.setText(songs.get(2));
+        jButton4.setText(songs.get(3));
     }
 
     /**
@@ -113,26 +128,29 @@ int guess;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       guess=0;
+        guess=0;
+        runtime.round(guess);
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        guess=1;// TODO add your handling code here:
+        guess=1;
+        runtime.round(guess);
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        guess=2;// TODO add your handling code here:
+        guess=2;
+        runtime.round(guess);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        guess=3;// TODO add your handling code here:
+        guess=3;
+        runtime.round(guess);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+    public void run(){
+                /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -161,6 +179,13 @@ int guess;
                 new Buttonswithreturns().setVisible(true);
             }
         });
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

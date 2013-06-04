@@ -15,8 +15,14 @@ public class SetupScreen extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField jTextField1;
 	private String contestantName;
+    private Runtime runtime;
 
     public SetupScreen() {
+        initComponents();
+    }
+
+    public SetupScreen(Runtime x) {
+        runtime = x;
         initComponents();
     }
 
@@ -120,10 +126,13 @@ public class SetupScreen extends javax.swing.JFrame {
         pack();
     }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt){
+        new Thread(
     	contestantName = jTextField1.getText();
+        runtime.runMainFrame(contestantName, Integer.parseInt(jSpinner1.getValue().toString()));
+        );
     	this.dispose();    
-    	}
+    }
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
         System.out.println("Click 'Begin' to start game");
@@ -135,6 +144,13 @@ public class SetupScreen extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+
+        JFrame frame = new JFrame("Guess That Tune1");
+        
+        JOptionPane.showMessageDialog(frame, "Sweyn Venderbush, Henrik Lempa-Cho, Waqarul Islam, Arina Bykadorova, and Richard Yip present:");
+       
+        JOptionPane.showMessageDialog(frame, "GUESS THAT TUNE");
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -178,11 +194,6 @@ public class SetupScreen extends javax.swing.JFrame {
     
     @SuppressWarnings("unused")
 	public static void main(String args[]) {
-    	JFrame frame = new JFrame("Guess That Tune1");
-        
-        JOptionPane.showMessageDialog(frame, "Sweyn Venderbush, Henrik Lempa-Cho, Waqarul Islam, Arina Bykadorova, and Richard Yip present:");
-       
-        JOptionPane.showMessageDialog(frame, "GUESS THAT TUNE");
 
         run();
     }
