@@ -15,7 +15,7 @@ public class SetupScreen extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField jTextField1;
 	private String contestantName;
-	
+
     public SetupScreen() {
         initComponents();
     }
@@ -47,10 +47,10 @@ public class SetupScreen extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Difficulty");
+        jLabel1.setText("Number of Rounds");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 20));
-        jLabel2.setText("Name That Tune");
+        jLabel2.setText("Guess That Tune");
 
         jLabel3.setText("Player Name");
 
@@ -176,12 +176,13 @@ public class SetupScreen extends javax.swing.JFrame {
     	return (Integer) jSpinner1.getValue();
     }
     
-    public static void main(String args[]) {
-    	JFrame frame = new JFrame("Name That Tune1");
+    @SuppressWarnings("unused")
+	public static void main(String args[]) {
+    	JFrame frame = new JFrame("Guess That Tune1");
         
-        JOptionPane.showMessageDialog(frame, "Sweyn Venderbush, Henrik Lempa-Cho, Waqarul Islam, Arina, and Richard Yip present:");
-                
-        JOptionPane.showMessageDialog(frame, "NAME THAT TUNE");
+        JOptionPane.showMessageDialog(frame, "Sweyn Venderbush, Henrik Lempa-Cho, Waqarul Islam, Arina Bykadorova, and Richard Yip present:");
+       
+        JOptionPane.showMessageDialog(frame, "GUESS THAT TUNE");
 
         run();
     }
