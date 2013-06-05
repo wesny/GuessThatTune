@@ -45,6 +45,7 @@ public class Buttonswithreturns extends javax.swing.JFrame {
         jButton2.setText(songs.get(1));
         jButton3.setText(songs.get(2));
         jButton4.setText(songs.get(3));
+        redraw();
     }
 
     /**
@@ -195,6 +196,43 @@ public class Buttonswithreturns extends javax.swing.JFrame {
                 temp.setVisible(true);
             }
         });
+    }
+
+    public void redraw(){
+        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(123, Short.MAX_VALUE)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 155, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(layout.createSequentialGroup()
+                        .add(6, 6, 6)
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jButton3)
+                            .add(jButton1)
+                            .add(jButton2)
+                            .add(jButton4))))
+                .add(122, 122, 122))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(layout.createSequentialGroup()
+                .add(18, 18, 18)
+                .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 34, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(38, 38, 38)
+                .add(jButton3)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jButton1)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jButton2)
+                .add(18, 18, 18)
+                .add(jButton4)
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+
+        pack();
     }
 
     /**

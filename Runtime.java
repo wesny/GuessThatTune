@@ -11,7 +11,7 @@ public class Runtime{
 	private FinalFrame end;
 
 	public Runtime(){
-		songs = new SongList(".");
+		songs = new SongList("./Songs");
 		player = new Contestant();
 		answer = 0;
 		startup = new SetupScreen(this);
