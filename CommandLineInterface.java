@@ -10,15 +10,6 @@ public class CommandLineInterface{
 		songs = null;
 	}
 
-	// public static void waiting (int n){  
- 	//        long t0, t1;
- 	//        t0 =  System.currentTimeMillis();
- 	//        do{
- 	//            t1 = System.currentTimeMillis();
- 	//        }
- 	//        while ((t1 - t0) < (n * 1000));
- 	//    }
-
 	public void play(){
 		System.out.println("Welcome to GuessThatTune!");
 		System.out.print("Please input your name:");
@@ -40,10 +31,6 @@ public class CommandLineInterface{
 			for (int j = 0; j < 4; j++){
 				System.out.println(j + ": " + songList.get(j));
 			}
-			//System.out.print("You'll be able to make your guess after the song finishes");
-			//waiting(10);
-			//musicPlayer.forceClose();
-			//System.out.println();
 			System.out.print("Please enter the corresponding number to your guess:");
 			int guess = readInt();
 			musicPlayer.close();
